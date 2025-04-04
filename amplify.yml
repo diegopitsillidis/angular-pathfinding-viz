@@ -10,7 +10,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: dist/angular-pathfinding-viz
+    baseDirectory: dist/angular-pathfinding-viz/browser
     files:
       - '**/*'
   cache:

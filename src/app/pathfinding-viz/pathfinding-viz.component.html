@@ -1,0 +1,38 @@
+<!-- pathfinding-viz.component.html -->
+<div>
+  <h2 class="text-xl font-bold mb-2">Pathfinding Visualization (BFS)</h2>
+
+  <!-- Each row is a flex container -->
+  <div *ngFor="let row of grid" class="flex gap-1 mb-1">
+    <div
+      *ngFor="let cell of row"
+      [ngClass]="{
+        'bg-gray-200': cell.state === 'empty',
+        'bg-black': cell.state === 'obstacle',
+        'bg-blue-300': cell.state === 'visited',
+        'bg-green-400': cell.state === 'path',
+        'bg-red-400': cell.state === 'end',
+      }"
+      class="border h-8 w-8 select-none focus:outline-none"
+      (click)="setEndCell(cell)"
+    >
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="mt-4">
+    <button
+      (click)="startAlgorithm()"
+      [disabled]="isRunning"
+      class="px-4 py-2 bg-green-500 text-white rounded"
+    >
+      Start
+    </button>
+    <button
+      (click)="reset()"
+      class="px-4 py-2 bg-blue-500 text-white rounded ml-2"
+    >
+      Reset
+    </button>
+  </div>
+</div>

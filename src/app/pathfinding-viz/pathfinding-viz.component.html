@@ -14,7 +14,7 @@
         'bg-red-400': cell.state === 'end',
       }"
       class="border h-8 w-8 select-none focus:outline-none"
-      (click)="setEndCell(cell)"
+      (click)="(isRunning) ? '' : setEndCell(cell)"
     >
     </div>
   </div>
